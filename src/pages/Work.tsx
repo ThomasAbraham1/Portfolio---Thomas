@@ -1,4 +1,5 @@
 import { useRef } from 'react';
+import { Link } from 'react-router-dom';
 import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
 import { ArrowUpRight } from 'lucide-react';
 
@@ -162,6 +163,32 @@ export default function Work() {
                     </div>
                 ))}
             </div>
+
+            {/* Ready to Start CTA */}
+            <motion.div
+                initial={{ opacity: 0, scale: 0.95 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.2, duration: 1 }}
+                className="mt-32 w-full h-[500px] rounded-3xl overflow-hidden relative group"
+            >
+                <img
+                    src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=2000&q=80"
+                    alt="Ready to start"
+                    className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-dark/40 mix-blend-multiply"></div>
+                <div className="absolute inset-0 flex flex-col items-center justify-center text-center text-light px-6">
+                    <h2 className="text-4xl md:text-6xl font-bold mb-6 tracking-tight">Ready to start?</h2>
+                    <p className="text-xl md:text-2xl opacity-90 mb-8 max-w-2xl">Let's build something amazing together.</p>
+                    <Link
+                        to="/contact"
+                        className="px-8 py-4 bg-primary text-light rounded-full text-lg font-medium hover:bg-primary/90 transition-all duration-300 hover:scale-105 flex items-center gap-2"
+                    >
+                        Get in Touch <ArrowUpRight size={20} />
+                    </Link>
+                </div>
+            </motion.div>
         </div>
     );
 }
