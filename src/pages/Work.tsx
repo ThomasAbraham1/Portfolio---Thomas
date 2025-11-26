@@ -115,7 +115,7 @@ function ProjectCard({ project, index }: { project: typeof projects[0], index: n
                 <motion.img
                     src={project.image}
                     alt={project.title}
-                    className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-110"
+                    className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-110"
                     loading={index < 2 ? "eager" : "lazy"}
                     style={{ translateZ: "50px" }}
                 />
