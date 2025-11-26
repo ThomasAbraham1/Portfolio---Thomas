@@ -33,9 +33,12 @@ export default function Navbar() {
         <>
             <nav className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${scrolled ? 'py-4 bg-light/80 dark:bg-dark/80 backdrop-blur-md border-b border-dark/5 dark:border-light/5' : 'py-8 bg-transparent'}`}>
                 <div className="container mx-auto px-6 flex justify-between items-center">
-                    <Link to="/" className="text-2xl font-bold tracking-tighter hover:text-primary transition-colors z-[70] relative group dark:text-light">
-                        <span className="relative z-10">TA.</span>
-                        <span className="absolute -bottom-1 left-0 w-0 h-[2px] bg-primary transition-all duration-300 group-hover:w-full"></span>
+                    <Link to="/" className="z-[70] relative group flex items-center">
+                        <img
+                            src="https://i.ibb.co/DPKwZzhM/Untitled-design-48.webp"
+                            alt="Thomas Abraham Logo"
+                            className="h-16 md:h-20 w-auto transition-all duration-300 group-hover:scale-105"
+                        />
                     </Link>
 
                     {/* Desktop Menu */}
