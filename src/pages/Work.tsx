@@ -1,0 +1,167 @@
+import { useRef } from 'react';
+import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
+import { ArrowUpRight } from 'lucide-react';
+
+const projects = [
+    {
+        title: "Aoki Brand Lab",
+        category: "Brand Strategy & Design",
+        url: "https://aokibrandlab.com",
+        image: "https://images.unsplash.com/photo-1600607686527-6fb886090705?auto=format&fit=crop&w=1600&q=80"
+    },
+    {
+        title: "Make1WayMaker",
+        category: "E-commerce",
+        url: "https://www.make1waymaker.com",
+        image: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=1600&q=80"
+    },
+    {
+        title: "YourBinoculars",
+        category: "Travel & Exploration",
+        url: "https://www.yourbinoculars.com",
+        image: "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=1600&q=80"
+    },
+    {
+        title: "Faith Connect",
+        category: "SaaS Platform",
+        url: "https://faithconnect.store",
+        image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1600&q=80"
+    }
+];
+
+function ProjectCard({ project, index }: { project: typeof projects[0], index: number }) {
+    const ref = useRef<HTMLAnchorElement>(null);
+
+    const x = useMotionValue(0);
+    const y = useMotionValue(0);
+
+    const mouseXSpring = useSpring(x);
+    const mouseYSpring = useSpring(y);
+
+    const rotateX = useTransform(mouseYSpring, [-0.5, 0.5], ["7deg", "-7deg"]);
+    const rotateY = useTransform(mouseXSpring, [-0.5, 0.5], ["-7deg", "7deg"]);
+
+    const handleMouseMove = (e: React.MouseEvent<HTMLAnchorElement>) => {
+        const rect = ref.current?.getBoundingClientRect();
+        if (!rect) return;
+
+        const width = rect.width;
+        const height = rect.height;
+
+        const mouseX = e.clientX - rect.left;
+        const mouseY = e.clientY - rect.top;
+
+        const xPct = mouseX / width - 0.5;
+        const yPct = mouseY / height - 0.5;
+
+        x.set(xPct);
+        y.set(yPct);
+    };
+
+    const handleMouseLeave = () => {
+        x.set(0);
+        y.set(0);
+    };
+
+    const handleTouchMove = (e: React.TouchEvent<HTMLAnchorElement>) => {
+        const rect = ref.current?.getBoundingClientRect();
+        if (!rect || !e.touches[0]) return;
+
+        const width = rect.width;
+        const height = rect.height;
+
+        const touchX = e.touches[0].clientX - rect.left;
+        const touchY = e.touches[0].clientY - rect.top;
+
+        const xPct = touchX / width - 0.5;
+        const yPct = touchY / height - 0.5;
+
+        x.set(xPct);
+        y.set(yPct);
+    };
+
+    const handleTouchEnd = () => {
+        x.set(0);
+        y.set(0);
+    };
+
+    return (
+        <motion.a
+            href={project.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            ref={ref}
+            onMouseMove={handleMouseMove}
+            onMouseLeave={handleMouseLeave}
+            onTouchMove={handleTouchMove}
+            onTouchEnd={handleTouchEnd}
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={index < 2 ? undefined : { opacity: 1, y: 0 }}
+            animate={index < 2 ? { opacity: 1, y: 0 } : undefined}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ delay: index * 0.1, duration: 0.8 }}
+            className="block group"
+            style={{ perspective: 1000 }}
+        >
+            <motion.div
+                style={{
+                    rotateX,
+                    rotateY,
+                    transformStyle: "preserve-3d",
+                }}
+                className="relative aspect-video rounded-2xl overflow-hidden bg-gray/10 mb-8 shadow-lg group-hover:shadow-2xl transition-shadow duration-500"
+            >
+                <div className="absolute inset-0 bg-dark/10 group-hover:bg-transparent transition-colors duration-500 z-10" />
+                <motion.img
+                    src={project.image}
+                    alt={project.title}
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                    loading={index < 2 ? "eager" : "lazy"}
+                    style={{ translateZ: "50px" }}
+                />
+                <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-20">
+                    <div className="w-20 h-20 bg-light/90 backdrop-blur-sm rounded-full flex items-center justify-center text-dark transform scale-0 group-hover:scale-100 transition-transform duration-500 delay-100 shadow-xl">
+                        <ArrowUpRight size={36} strokeWidth={1.5} />
+                    </div>
+                </div>
+
+                {/* Mobile Tap Indicator - visible on small screens */}
+                <div className="sm:hidden absolute bottom-4 right-4 w-12 h-12 bg-primary/90 backdrop-blur-sm rounded-full flex items-center justify-center text-light shadow-lg z-20">
+                    <ArrowUpRight size={20} strokeWidth={2} />
+                </div>
+            </motion.div>
+            <div className="flex flex-wrap justify-between items-end gap-3 px-2">
+                <div>
+                    <h3 className="text-3xl font-bold mb-2 group-hover:text-primary transition-colors dark:text-light">{project.title}</h3>
+                    <p className="text-dark/60 dark:text-light/60 text-lg">{project.category}</p>
+                </div>
+                <div className="hidden sm:flex text-xs uppercase tracking-widest border border-dark/20 dark:border-light/20 px-3 py-2 rounded-full group-hover:bg-dark group-hover:text-light transition-all duration-300 whitespace-nowrap">
+                    View Project
+                </div>
+            </div>
+        </motion.a>
+    );
+}
+
+export default function Work() {
+    return (
+        <div className="container mx-auto px-6 py-20">
+            <motion.h1
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8 }}
+                className="text-6xl md:text-9xl font-bold mb-24 tracking-tighter"
+            >
+                Selected <br className="hidden md:block" /> Work.
+            </motion.h1>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-32">
+                {projects.map((project, index) => (
+                    <div key={index} className={index % 2 === 1 ? "md:mt-32" : ""}>
+                        <ProjectCard project={project} index={index} />
+                    </div>
+                ))}
+            </div>
+        </div>
+    );
+}
