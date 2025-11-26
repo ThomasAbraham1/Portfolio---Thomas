@@ -9,12 +9,12 @@ export default function About() {
                     initial={{ opacity: 0, x: -50 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.8 }}
-                    className="relative group"
+                    className="relative group max-w-lg mx-auto md:mx-0"
                 >
                     <div className="aspect-[3/4] rounded-2xl overflow-hidden shadow-2xl relative z-10">
                         <div className="absolute inset-0 bg-primary/20 mix-blend-multiply opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-20"></div>
                         <img
-                            src="https://i.ibb.co/B5V29GMK/1763261864219.webp"
+                            src="https://i.ibb.co/SwJrRxBH/image.png"
                             alt="Thomas Abraham"
                             loading="eager"
                             fetchPriority="high"
