@@ -7,25 +7,25 @@ const projects = [
         title: "Aoki Brand Lab",
         category: "Brand Strategy & Design",
         url: "https://aokibrandlab.com",
-        image: "https://images.unsplash.com/photo-1600607686527-6fb886090705?auto=format&fit=crop&w=1600&q=80"
+        image: "https://i.ibb.co/3yFmxBZ2/Aoki-Brand-Lab.webp"
     },
     {
         title: "Make1WayMaker",
         category: "E-commerce",
         url: "https://www.make1waymaker.com",
-        image: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=1600&q=80"
+        image: "https://i.ibb.co/8DKSgFRV/Make-1-Waymaker.webp"
     },
     {
         title: "YourBinoculars",
         category: "Travel & Exploration",
         url: "https://www.yourbinoculars.com",
-        image: "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=1600&q=80"
+        image: "https://i.ibb.co/3mz0pjsP/Your-Binoculars.webp"
     },
     {
         title: "Faith Connect",
         category: "SaaS Platform",
         url: "https://faithconnect.store",
-        image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1600&q=80"
+        image: "https://i.ibb.co/67fnGHT4/Faith-Connect.webp"
     }
 ];
 
@@ -115,7 +115,7 @@ function ProjectCard({ project, index }: { project: typeof projects[0], index: n
                 <motion.img
                     src={project.image}
                     alt={project.title}
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                    className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-110"
                     loading={index < 2 ? "eager" : "lazy"}
                     style={{ translateZ: "50px" }}
                 />
