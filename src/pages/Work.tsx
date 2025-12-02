@@ -2,6 +2,7 @@ import { useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
 import { ArrowUpRight } from 'lucide-react';
+import { logEvent } from '../utils/analytics';
 
 const projects = [
     {
@@ -86,12 +87,17 @@ function ProjectCard({ project, index }: { project: typeof projects[0], index: n
         y.set(0);
     };
 
+    const handleProjectClick = () => {
+        logEvent('Work', 'Project Clicked', project.title);
+    };
+
     return (
         <motion.a
             href={project.url}
             target="_blank"
             rel="noopener noreferrer"
             ref={ref}
+            onClick={handleProjectClick}
             onMouseMove={handleMouseMove}
             onMouseLeave={handleMouseLeave}
             onTouchMove={handleTouchMove}

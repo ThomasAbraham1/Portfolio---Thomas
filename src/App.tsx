@@ -7,9 +7,12 @@ import Services from './pages/Services';
 import Testimonials from './pages/Testimonials';
 import Contact from './pages/Contact';
 
+import TrackPageViews from './components/TrackPageViews';
+
 function App() {
   return (
     <Router>
+      <TrackPageViews />
       <Layout>
         <Routes>
           <Route path="/" element={<Home />} />

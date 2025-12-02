@@ -2,6 +2,7 @@ import { useState, useRef } from 'react';
 import { motion } from 'framer-motion';
 import emailjs from '@emailjs/browser';
 import { Send, Mail, MessageCircle, Linkedin } from 'lucide-react';
+import { logEvent } from '../utils/analytics';
 
 export default function Contact() {
     const formRef = useRef<HTMLFormElement>(null);
@@ -27,12 +28,14 @@ export default function Contact() {
             window.location.href = `mailto:cta102938@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
             setLoading(false);
             setSuccess(true);
+            logEvent('Contact', 'Form Submitted', 'Mailto Fallback');
             return;
         }
 
         emailjs.sendForm(serviceId, templateId, formRef.current!, publicKey)
             .then(() => {
                 setSuccess(true);
+                logEvent('Contact', 'Form Submitted', 'EmailJS Success');
                 setLoading(false);
                 if (formRef.current) formRef.current.reset();
             }, (error) => {
