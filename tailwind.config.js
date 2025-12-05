@@ -8,10 +8,10 @@ export default {
     theme: {
         extend: {
             colors: {
-                primary: '#7DA1BF',
+                primary: '#34B4EA',
                 dark: '#24262B',
                 light: '#E1DFD0',
-                gray: '#525550',
+                gray: '#525550', 
             },
             fontFamily: {
                 sans: ['Inter', 'sans-serif'],
@@ -20,6 +20,6 @@ export default {
                 'spin-slow': 'spin 8s linear infinite',
             }
         },
-    },
+    }, 
     plugins: [],
 }

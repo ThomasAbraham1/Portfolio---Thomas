@@ -91,14 +91,13 @@ export default function Home() {
                             Full-Stack Developer
                         </motion.p>
                     </div>
-
                     <motion.p
-                        initial={{ opacity: 0 }}
+                        initial={{ opacity: 0 }}  
                         animate={{ opacity: 1 }}
                         transition={{ delay: 0.8, duration: 1 }}
                         className="text-lg md:text-2xl max-w-3xl mx-auto mb-12 leading-relaxed text-dark/80 dark:text-light/80"
                     >
-                        I build clean, modern websites that feel <span className="text-primary font-semibold relative inline-block">
+                        I build clean, modern websites that feel <span className="text-primary   font-semibold relative inline-block">
                             3× more expensive
                             <svg className="absolute w-full h-2 -bottom-1 left-0 text-primary/30" viewBox="0 0 100 10" preserveAspectRatio="none">
                                 <path d="M0 5 Q 50 10 100 5" stroke="currentColor" strokeWidth="2" fill="none" />
