@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { ArrowUpRight } from 'lucide-react';
+import Pricing from '../components/Pricing';
 
 const services = [
     {
@@ -61,6 +62,10 @@ export default function Services() {
                     </motion.div>
                 ))}
             </div>
+
+            <Pricing />
+
+
 
             {/* Ready to Start CTA */}
             <motion.div
