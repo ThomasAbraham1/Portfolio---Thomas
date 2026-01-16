@@ -9,6 +9,7 @@ const links = [
     { name: 'About', path: '/about' },
     { name: 'Work', path: '/work' },
     { name: 'Services', path: '/services' },
+    { name: 'Pricing', path: '/pricing' },
     { name: 'Contact', path: '/contact' },
 ];
 
@@ -29,7 +30,7 @@ export default function Navbar() {
         setIsOpen(false);
     }, [location]);
 
-    return ( 
+    return (
         <>
             <nav className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${scrolled ? 'py-4 bg-light/80 dark:bg-dark/80 backdrop-blur-md border-b border-dark/5 dark:border-light/5' : 'py-8 bg-transparent'}`}>
                 <div className="container mx-auto px-6 flex justify-between items-center">

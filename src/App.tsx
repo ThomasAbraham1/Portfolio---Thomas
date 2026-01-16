@@ -5,6 +5,7 @@ import About from './pages/About';
 import Work from './pages/Work';
 import Services from './pages/Services';
 import Testimonials from './pages/Testimonials';
+import Pricing from './pages/Pricing';
 import Contact from './pages/Contact';
 
 import TrackPageViews from './components/TrackPageViews';
@@ -19,6 +20,7 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/work" element={<Work />} />
           <Route path="/services" element={<Services />} />
+          <Route path="/pricing" element={<Pricing />} />
           <Route path="/testimonials" element={<Testimonials />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>
