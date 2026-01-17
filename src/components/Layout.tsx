@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import Lenis from '@studio-freight/lenis';
 import Navbar from './Navbar';
 import Footer from './Footer';
@@ -8,11 +8,14 @@ import { useLocation } from 'react-router-dom';
 export default function Layout({ children }: { children: React.ReactNode }) {
     const location = useLocation();
 
+    const lenisRef = useRef<Lenis | null>(null);
+
     useEffect(() => {
         const lenis = new Lenis({
             duration: 1.2,
             easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
         });
+        lenisRef.current = lenis;
 
         function raf(time: number) {
             lenis.raf(time);
@@ -23,12 +26,17 @@ export default function Layout({ children }: { children: React.ReactNode }) {
 
         return () => {
             lenis.destroy();
+            lenisRef.current = null;
         };
     }, []);
 
     useEffect(() => {
-        window.scrollTo(0, 0);
-    }, [location]);
+        if (lenisRef.current) {
+            lenisRef.current.scrollTo(0, { immediate: true });
+        } else {
+            window.scrollTo(0, 0);
+        }
+    }, [location.pathname]);
 
     return (
         <div className="relative min-h-screen bg-light text-dark overflow-x-hidden selection:bg-primary selection:text-white font-sans transition-colors duration-300 dark:bg-dark dark:text-light">
