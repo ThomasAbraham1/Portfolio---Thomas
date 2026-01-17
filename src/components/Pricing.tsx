@@ -110,17 +110,17 @@ export default function Pricing() {
                         className="inline-flex bg-dark/5 dark:bg-light/10 p-1 rounded-full relative"
                     >
                         <div
-                            className={`absolute top-1 bottom-1 rounded-full bg-primary transition-all duration-300 ${category === 'web' ? 'left-1 w-[calc(50%-4px)]' : 'left-[calc(50%+2px)] w-[calc(50%-4px)]'}`}
+                            className={`absolute top-1 bottom-1 rounded-full bg-primary transition-all duration-300 ${category === 'web' ? 'left-1' : 'left-[calc(50%+2px)]'} w-[calc(50%-4px)]`}
                         ></div>
                         <button
                             onClick={() => setCategory('web')}
-                            className={`relative px-8 py-3 rounded-full text-sm font-medium transition-colors duration-300 z-10 ${category === 'web' ? 'text-white' : 'text-dark/70 dark:text-light/70 hover:text-dark dark:hover:text-light'}`}
+                            className={`relative w-40 py-3 rounded-full text-sm font-medium transition-colors duration-300 z-10 ${category === 'web' ? 'text-white' : 'text-dark/70 dark:text-light/70 hover:text-dark dark:hover:text-light'}`}
                         >
                             Web Development
                         </button>
                         <button
                             onClick={() => setCategory('ads')}
-                            className={`relative px-8 py-3 rounded-full text-sm font-medium transition-colors duration-300 z-10 ${category === 'ads' ? 'text-white' : 'text-dark/70 dark:text-light/70 hover:text-dark dark:hover:text-light'}`}
+                            className={`relative w-40 py-3 rounded-full text-sm font-medium transition-colors duration-300 z-10 ${category === 'ads' ? 'text-white' : 'text-dark/70 dark:text-light/70 hover:text-dark dark:hover:text-light'}`}
                         >
                             Meta Ads
                         </button>
@@ -140,8 +140,8 @@ export default function Pricing() {
                             <div
                                 key={index}
                                 className={`relative p-8 rounded-3xl border transition-all duration-300 group hover:-translate-y-2 ${tier.isPopular
-                                        ? 'bg-dark text-light border-dark dark:bg-light dark:text-dark dark:border-light shadow-2xl scale-105 z-10'
-                                        : 'bg-light dark:bg-dark/50 border-dark/10 dark:border-light/10 hover:border-primary/50 dark:hover:border-primary/50'
+                                    ? 'bg-dark text-light border-dark dark:bg-light dark:text-dark dark:border-light shadow-2xl scale-105 z-10'
+                                    : 'bg-light dark:bg-dark/50 border-dark/10 dark:border-light/10 hover:border-primary/50 dark:hover:border-primary/50'
                                     }`}
                             >
                                 {tier.isPopular && (
@@ -178,8 +178,8 @@ export default function Pricing() {
                                 <Link
                                     to="/contact"
                                     className={`w-full py-4 rounded-xl font-medium transition-all duration-300 flex items-center justify-center gap-2 group-hover:gap-3 ${tier.isPopular
-                                            ? 'bg-primary text-white hover:bg-primary/90'
-                                            : 'bg-dark text-white dark:bg-light dark:text-dark hover:bg-primary hover:text-white dark:hover:bg-primary dark:hover:text-white'
+                                        ? 'bg-primary text-white hover:bg-primary/90'
+                                        : 'bg-dark text-white dark:bg-light dark:text-dark hover:bg-primary hover:text-white dark:hover:bg-primary dark:hover:text-white'
                                         }`}
                                 >
                                     {tier.buttonText || "Get Started"}

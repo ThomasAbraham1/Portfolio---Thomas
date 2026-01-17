@@ -43,7 +43,7 @@ export default function Navbar() {
                     </Link>
 
                     {/* Desktop Menu */}
-                    <div className="hidden md:flex gap-10 items-center">
+                    <div className="hidden lg:flex gap-10 items-center">
                         {links.map((link) => (
                             <Link
                                 key={link.name}
@@ -58,7 +58,7 @@ export default function Navbar() {
                     </div>
 
                     {/* Mobile Toggle */}
-                    <div className="md:hidden flex items-center gap-4 z-[70] relative">
+                    <div className="lg:hidden flex items-center gap-4 z-[70] relative">
                         <ThemeToggle />
                         <button
                             className="p-2 dark:text-light relative z-[70]"
@@ -78,7 +78,7 @@ export default function Navbar() {
                         animate={{ opacity: 1, clipPath: "circle(150% at 100% 0)" }}
                         exit={{ opacity: 0, clipPath: "circle(0% at 100% 0)" }}
                         transition={{ duration: 0.5, ease: "easeInOut" }}
-                        className="fixed inset-0 bg-light dark:bg-dark flex flex-col items-center justify-center gap-8 md:hidden z-[60]"
+                        className="fixed inset-0 bg-light dark:bg-dark flex flex-col items-center justify-center gap-8 lg:hidden z-[60]"
                     >
                         {/* Close Button */}
                         <button

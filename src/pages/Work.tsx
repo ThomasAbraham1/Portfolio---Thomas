@@ -195,17 +195,17 @@ export default function Work() {
                     className="inline-flex bg-dark/5 dark:bg-light/10 p-1 rounded-full relative"
                 >
                     <div
-                        className={`absolute top-1 bottom-1 rounded-full bg-primary transition-all duration-300 ${filter === 'web' ? 'left-1 w-[calc(50%-4px)]' : 'left-[calc(50%+2px)] w-[calc(50%-4px)]'}`}
+                        className={`absolute top-1 bottom-1 rounded-full bg-primary transition-all duration-300 ${filter === 'web' ? 'left-1' : 'left-[calc(50%+2px)]'} w-[calc(50%-4px)]`}
                     ></div>
                     <button
                         onClick={() => setFilter('web')}
-                        className={`relative px-8 py-3 rounded-full text-sm font-medium transition-colors duration-300 z-10 ${filter === 'web' ? 'text-white' : 'text-dark/70 dark:text-light/70 hover:text-dark dark:hover:text-light'}`}
+                        className={`relative w-40 py-3 rounded-full text-sm font-medium transition-colors duration-300 z-10 ${filter === 'web' ? 'text-white' : 'text-dark/70 dark:text-light/70 hover:text-dark dark:hover:text-light'}`}
                     >
                         Web Development
                     </button>
                     <button
                         onClick={() => setFilter('ads')}
-                        className={`relative px-8 py-3 rounded-full text-sm font-medium transition-colors duration-300 z-10 ${filter === 'ads' ? 'text-white' : 'text-dark/70 dark:text-light/70 hover:text-dark dark:hover:text-light'}`}
+                        className={`relative w-40 py-3 rounded-full text-sm font-medium transition-colors duration-300 z-10 ${filter === 'ads' ? 'text-white' : 'text-dark/70 dark:text-light/70 hover:text-dark dark:hover:text-light'}`}
                     >
                         Ad Campaigns
                     </button>
