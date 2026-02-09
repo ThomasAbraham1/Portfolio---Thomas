@@ -13,21 +13,21 @@ const webProjects = [
     },
     {
         title: "Make1WayMaker",
-        category: "E-commerce",
+        category: "Business Solutions Platform",
         url: "https://www.make1waymaker.com",
         image: "https://i.ibb.co/8DKSgFRV/Make-1-Waymaker.webp"
     },
     {
-        title: "YourBinoculars",
-        category: "Travel & Exploration",
-        url: "https://www.yourbinoculars.com",
-        image: "https://i.ibb.co/3mz0pjsP/Your-Binoculars.webp"
+        title: "Barbera Transducers System",
+        category: "E-commerce • Audio Equipment",
+        url: "https://barbera-transducer-systems.onrender.com",
+        image: "https://i.ibb.co/wZv4xFSL/Screenshot-2026-02-09-192140.webp"
     },
     {
-        title: "Faith Connect",
-        category: "SaaS Platform",
-        url: "https://faithconnect.store",
-        image: "https://i.ibb.co/67fnGHT4/Faith-Connect.webp"
+        title: "Sudha Novelties",
+        category: "E-commerce • Toys & Games",
+        url: "https://sudhanovelties.com",
+        image: "https://i.ibb.co/6chWdpwJ/Screenshot-2026-02-09-192444.webp"
     }
 ];
 
