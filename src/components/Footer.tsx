@@ -13,7 +13,7 @@ export default function Footer() {
                     {/* Social Icons */}
                     <div className="flex gap-6">
                         <a
-                            href="mailto:cta102938@gmail.com"
+                            href="mailto:thomas@harpazotech.com"
                             className="group w-16 h-16 rounded-full border-2 border-light/20 flex items-center justify-center hover:border-primary hover:bg-primary/10 transition-all duration-300"
                             aria-label="Email"
                         >

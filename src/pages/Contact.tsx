@@ -1,13 +1,11 @@
 import { useState, useRef } from 'react';
 import { motion } from 'framer-motion';
-import emailjs from '@emailjs/browser';
 import { Send, Mail, MessageCircle, Linkedin } from 'lucide-react';
 import { logEvent } from '../utils/analytics';
 
 export default function Contact() {
     const formRef = useRef<HTMLFormElement>(null);
     const [loading, setLoading] = useState(false);
-    const [success, setSuccess] = useState(false);
     const [error, setError] = useState(false);
 
     const handleSubmit = (e: React.FormEvent) => {
@@ -15,34 +13,22 @@ export default function Contact() {
         setLoading(true);
         setError(false);
 
-        // Replace these with your actual EmailJS service, template, and public key
-        const serviceId = 'YOUR_SERVICE_ID';
-        const templateId = 'YOUR_TEMPLATE_ID';
-        const publicKey = 'YOUR_PUBLIC_KEY';
-
-        if (serviceId === 'YOUR_SERVICE_ID') {
-            // Fallback to mailto if keys are not set
-            const formData = new FormData(formRef.current!);
-            const subject = `Portfolio Contact from ${formData.get('user_name')}`;
-            const body = `${formData.get('message')}\n\nFrom: ${formData.get('user_email')}`;
-            window.location.href = `mailto:cta102938@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-            setLoading(false);
-            setSuccess(true);
-            logEvent('Contact', 'Form Submitted', 'Mailto Fallback');
-            return;
-        }
-
-        emailjs.sendForm(serviceId, templateId, formRef.current!, publicKey)
-            .then(() => {
-                setSuccess(true);
-                logEvent('Contact', 'Form Submitted', 'EmailJS Success');
-                setLoading(false);
-                if (formRef.current) formRef.current.reset();
-            }, (error) => {
-                console.error(error);
-                setError(true);
-                setLoading(false);
-            });
+        const formData = new FormData(formRef.current!);
+        const name = formData.get('user_name');
+        const email = formData.get('user_email');
+        const message = formData.get('message');
+        
+        const subject = `Portfolio Inquiry from ${name}`;
+        const body = `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`;
+        
+        const mailtoUrl = `mailto:thomas@harpazotech.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+        
+        window.location.href = mailtoUrl;
+        
+        setLoading(false);
+        logEvent('Contact', 'Form Submitted', 'Mailto Link');
+        
+        if (formRef.current) formRef.current.reset();
     };
 
     return (
@@ -61,11 +47,11 @@ export default function Contact() {
                     </p>
 
                     <div className="space-y-8">
-                        <a href="mailto:cta102938@gmail.com" className="flex items-center gap-4 text-2xl hover:text-primary transition-colors group">
+                        <a href="mailto:thomas@harpazotech.com" className="flex items-center gap-4 text-2xl hover:text-primary transition-colors group">
                             <div className="w-14 h-14 rounded-full border border-dark/20 dark:border-light/20 flex items-center justify-center group-hover:bg-primary group-hover:border-primary group-hover:text-light transition-all duration-300">
                                 <Mail size={24} />
                             </div>
-                            <span className="group-hover:translate-x-2 transition-transform duration-300">cta102938@gmail.com</span>
+                            <span className="group-hover:translate-x-2 transition-transform duration-300">thomas@harpazotech.com</span>
                         </a>
 
                         <a href="https://www.linkedin.com/in/thomas-abraham-97a847210/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 text-2xl hover:text-primary transition-colors group">
@@ -127,19 +113,9 @@ export default function Contact() {
                             disabled={loading}
                             className="w-full bg-dark text-light py-5 rounded-full uppercase tracking-widest hover:bg-primary transition-colors flex items-center justify-center gap-3 disabled:opacity-50 shadow-lg hover:shadow-primary/30 duration-300"
                         >
-                            {loading ? 'Sending...' : 'Send Message'}
+                            {loading ? 'Opening Mail...' : 'Send Message'}
                             {!loading && <Send size={18} />}
                         </button>
-
-                        {success && (
-                            <motion.div
-                                initial={{ opacity: 0, y: 10 }}
-                                animate={{ opacity: 1, y: 0 }}
-                                className="p-4 bg-green-100 text-green-800 rounded-lg text-center"
-                            >
-                                Message sent successfully!
-                            </motion.div>
-                        )}
 
                         {error && (
                             <motion.div
