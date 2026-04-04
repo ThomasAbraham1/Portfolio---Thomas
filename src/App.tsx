@@ -29,6 +29,7 @@ function App() {
             </Routes>
           </Layout>
         } />
+        <Route path="*" element={<UnderConstruction />} />
       </Routes>
     </Router>
   );

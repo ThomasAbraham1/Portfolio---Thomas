@@ -253,7 +253,7 @@ export default function Work() {
                     <h2 className="text-4xl md:text-6xl font-bold mb-6 tracking-tight">Ready to start?</h2>
                     <p className="text-xl md:text-2xl opacity-90 mb-8 max-w-2xl">Let's build something amazing together.</p>
                     <Link
-                        to="/contact"
+                        to="/thomas/contact"
                         className="px-8 py-4 bg-primary text-light rounded-full text-lg font-medium hover:bg-primary/90 transition-all duration-300 hover:scale-105 flex items-center gap-2"
                     >
                         Get in Touch <ArrowUpRight size={20} />

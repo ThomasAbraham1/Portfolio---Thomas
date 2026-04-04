@@ -127,7 +127,7 @@ export default function About() {
                     Got an idea? Need a fast, beautiful site? Let's turn your vision into reality.
                 </p>
                 <Link
-                    to="/contact"
+                    to="/thomas/contact"
                     className="inline-flex items-center gap-2 px-10 py-5 bg-dark dark:bg-light text-light dark:text-dark rounded-full text-lg font-medium hover:scale-105 transition-all duration-300 shadow-xl"
                 >
                     Start Your Project →

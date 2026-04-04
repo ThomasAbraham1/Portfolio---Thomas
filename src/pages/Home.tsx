@@ -111,7 +111,7 @@ export default function Home() {
                         transition={{ delay: 1 }}
                     >
                         <Link
-                            to="/work"
+                            to="/thomas/work"
                             className="group inline-flex items-center gap-3 px-10 py-5 bg-dark text-light rounded-full hover:bg-primary transition-all duration-300 transform hover:scale-105 shadow-xl hover:shadow-2xl hover:shadow-primary/20"
                         >
                             <span className="uppercase tracking-widest text-sm font-medium">View My Work</span>

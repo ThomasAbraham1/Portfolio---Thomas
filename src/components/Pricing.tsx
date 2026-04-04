@@ -37,14 +37,16 @@ const webDevTiers: PricingTier[] = [
         isPopular: true
     },
     {
-        title: "Online Store",
-        subtitle: "Best for Selling Products (Shopify/WooCommerce)",
+        title: "Business Premium",
+        subtitle: "Best for Established Businesses Needing High-End Web Presence",
         price: "₹30,000+",
         features: [
-            "Full Store Setup",
+            "8-12 Custom Pages",
+            "Premium UI/UX Design",
+            "Advanced SEO & Analytics",
+            "Online Store / E-commerce",
             "Payment Gateway Integration",
-            "Up to 10 Product Uploads",
-            "Shopping Cart Functionality"
+            "Priority Support & Delivery"
         ]
     }
 ];
@@ -176,7 +178,7 @@ export default function Pricing() {
                                 </ul>
 
                                 <Link
-                                    to="/contact"
+                                    to="/thomas/contact"
                                     className={`w-full py-4 rounded-xl font-medium transition-all duration-300 flex items-center justify-center gap-2 group-hover:gap-3 ${tier.isPopular
                                         ? 'bg-primary text-white hover:bg-primary/90'
                                         : 'bg-dark text-white dark:bg-light dark:text-dark hover:bg-primary hover:text-white dark:hover:bg-primary dark:hover:text-white'
