@@ -6,16 +6,22 @@ import { logEvent } from '../utils/analytics';
 
 const webProjects = [
     {
+        title: "Tryfecta",
+        category: "Business Management Platform",
+        url: "https://management.tryfecta.biz/",
+        image: "/assets/tryfecta.png"
+    },
+    {
+        title: "Harrigan Academy",
+        category: "English Language Learning",
+        url: "https://harriganacademy.com/",
+        image: "/assets/harrigan.png"
+    },
+    {
         title: "Aoki Brand Lab",
         category: "Brand Strategy & Design",
         url: "https://aokibrandlab.com",
         image: "https://i.ibb.co/3yFmxBZ2/Aoki-Brand-Lab.webp"
-    },
-    {
-        title: "Make1WayMaker",
-        category: "Business Solutions Platform",
-        url: "https://www.make1waymaker.com",
-        image: "https://i.ibb.co/8DKSgFRV/Make-1-Waymaker.webp"
     },
     {
         title: "Barbera Transducers System",
@@ -24,10 +30,10 @@ const webProjects = [
         image: "https://i.ibb.co/wZv4xFSL/Screenshot-2026-02-09-192140.webp"
     },
     {
-        title: "Sudha Novelties",
-        category: "E-commerce • Toys & Games",
-        url: "https://sudhanovelties.com",
-        image: "https://i.ibb.co/6chWdpwJ/Screenshot-2026-02-09-192444.webp"
+        title: "Make1WayMaker",
+        category: "Business Solutions Platform",
+        url: "https://www.make1waymaker.com",
+        image: "https://i.ibb.co/8DKSgFRV/Make-1-Waymaker.webp"
     }
 ];
 

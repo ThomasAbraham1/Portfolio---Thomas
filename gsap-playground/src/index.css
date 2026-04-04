@@ -1,0 +1,217 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+    --bg: #0a0a0f;
+    --surface: #13131a;
+    --border: #2a2a3a;
+    --accent: #7c6dfa;
+    --accent2: #fa6d9a;
+    --accent3: #6dfac0;
+    --text: #e8e8f0;
+    --muted: #666680;
+}
+
+html { scroll-behavior: auto; }
+
+body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    line-height: 1.6;
+}
+
+/* ── Header ── */
+header {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 32px;
+    background: rgba(10, 10, 15, 0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+}
+header h1 { font-size: 14px; font-weight: 600; color: var(--accent); letter-spacing: 2px; text-transform: uppercase; }
+header nav { display: flex; gap: 20px; }
+header nav a { font-size: 12px; color: var(--muted); text-decoration: none; text-transform: uppercase; letter-spacing: 1px; transition: color 0.2s; }
+header nav a:hover { color: var(--text); }
+
+/* ── Sections ── */
+.playground-section {
+    min-height: 100vh;
+    padding: 120px 60px 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-bottom: 1px solid var(--border);
+}
+
+.section-label {
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 12px;
+}
+.section-title {
+    font-size: clamp(28px, 4vw, 48px);
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+.section-desc {
+    font-size: 15px;
+    color: var(--muted);
+    margin-bottom: 48px;
+    max-width: 600px;
+}
+
+/* ── Stage ── */
+.stage {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 24px;
+    min-height: 240px;
+}
+
+/* ── Boxes ── */
+.box {
+    width: 80px;
+    height: 80px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    cursor: pointer;
+    color: #fff;
+}
+.box-purple { background: var(--accent); }
+.box-pink   { background: var(--accent2); }
+.box-green  { background: var(--accent3); color: #0a0a0f; }
+
+/* ── Controls ── */
+.controls { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 28px; }
+
+button {
+    padding: 10px 22px;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    background: var(--surface);
+    color: var(--text);
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: border-color 0.2s, background 0.2s;
+}
+button:hover { border-color: var(--accent); background: rgba(124,109,250,0.1); }
+button.primary { background: var(--accent); border-color: var(--accent); color: white; }
+button.primary:hover { background: #9d90ff; }
+
+/* ── Code callout ── */
+.callout {
+    background: #0f0f1a;
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--accent);
+    border-radius: 8px;
+    padding: 16px 20px;
+    margin-top: 20px;
+    font-family: 'Consolas', 'Courier New', monospace;
+    font-size: 13px;
+    color: #a0a0c0;
+    white-space: pre-wrap;
+    line-height: 1.8;
+}
+
+/* ── Stagger Grid ── */
+.stagger-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 12px;
+    width: 100%;
+    max-width: 400px;
+}
+.grid-cell {
+    aspect-ratio: 1;
+    border-radius: 10px;
+    background: var(--border);
+}
+
+/* ── Scroll Cards ── */
+.scroll-card {
+    width: 300px;
+    padding: 32px;
+    border-radius: 16px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    margin: 80px auto;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(60px);
+}
+.scroll-card h3 { font-size: 20px; margin-bottom: 8px; }
+.scroll-card p  { color: var(--muted); font-size: 14px; }
+
+/* ── Parallax Section ── */
+.parallax-section {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+    border-bottom: 1px solid var(--border);
+}
+.p-layer {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.p-bg {
+    font-size: clamp(100px, 18vw, 200px);
+    font-weight: 900;
+    color: var(--accent);
+    opacity: 0.07;
+    z-index: 0;
+}
+.p-mid {
+    font-size: clamp(40px, 8vw, 100px);
+    font-weight: 900;
+    letter-spacing: -2px;
+    color: var(--accent);
+    z-index: 1;
+    text-shadow: 0 0 60px rgba(124,109,250,0.5);
+}
+.p-fg {
+    font-size: 18px;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    color: var(--muted);
+    z-index: 2;
+    top: 63%;
+    align-items: flex-start;
+}
+
+/* ── TL Progress bar ── */
+.tl-progress {
+    width: 300px;
+    height: 6px;
+    background: var(--border);
+    border-radius: 4px;
+    overflow: hidden;
+    margin-top: 16px;
+}
+.tl-bar {
+    height: 100%;
+    width: 0%;
+    background: var(--accent);
+    border-radius: 4px;
+}
