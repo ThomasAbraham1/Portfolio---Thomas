@@ -5,12 +5,12 @@ import { Menu, X } from 'lucide-react';
 import ThemeToggle from './ThemeToggle';
 
 const links = [
-    { name: 'Home', path: '/' },
-    { name: 'About', path: '/about' },
-    { name: 'Work', path: '/work' },
-    { name: 'Services', path: '/services' },
-    { name: 'Pricing', path: '/pricing' },
-    { name: 'Contact', path: '/contact' },
+    { name: 'Home', path: '/thomas' },
+    { name: 'About', path: '/thomas/about' },
+    { name: 'Work', path: '/thomas/work' },
+    { name: 'Services', path: '/thomas/services' },
+    { name: 'Pricing', path: '/thomas/pricing' },
+    { name: 'Contact', path: '/thomas/contact' },
 ];
 
 export default function Navbar() {

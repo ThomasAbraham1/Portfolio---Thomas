@@ -52,7 +52,7 @@ export default function ParallaxHero() {
             {/* LAYER 1: Sky */}
             <div
                 className="absolute inset-0 z-0 bg-cover bg-center"
-                style={{ backgroundImage: `url("${import.meta.env.BASE_URL}assets/Untitled design (6).jpg")` }}
+                style={{ backgroundImage: 'url("/assets/Untitled design (6).jpg")' }}
             />
             {/* Night Overlay */}
             <div ref={nightOverlayRef} className="absolute inset-0 z-[1] bg-slate-900 opacity-0 pointer-events-none mix-blend-multiply" />
@@ -61,14 +61,14 @@ export default function ParallaxHero() {
             <div
                 ref={bgBuildingsRef}
                 className="absolute inset-0 z-10 bg-cover bg-bottom bg-no-repeat opacity-80"
-                style={{ backgroundImage: `url("${import.meta.env.BASE_URL}assets/Untitled design (28).png")` }}
+                style={{ backgroundImage: 'url("/assets/Untitled design (28).png")' }}
             />
 
             {/* LAYER 3: Billboard — extended 150px below viewport to compensate for upward travel */}
             <div
                 ref={billboardRef}
                 className="absolute z-20 bg-cover bg-center bg-no-repeat drop-shadow-2xl"
-                style={{ backgroundImage: `url("${import.meta.env.BASE_URL}assets/Untitled design (29).png")`, top: 0, left: 0, right: 0, bottom: '-150px' }}
+                style={{ backgroundImage: 'url("/assets/Untitled design (29).png")', top: 0, left: 0, right: 0, bottom: '-150px' }}
             />
 
             {/* LAYER 3.5: Billboard Text Container — matches billboard height */}
@@ -102,7 +102,7 @@ export default function ParallaxHero() {
             <div
                 ref={fgBuildingsRef}
                 className="absolute z-30 bg-cover bg-bottom bg-no-repeat pointer-events-none drop-shadow-2xl"
-                style={{ backgroundImage: `url("${import.meta.env.BASE_URL}assets/Untitled design (30).png")`, top: 0, left: 0, right: 0, bottom: '-400px' }}
+                style={{ backgroundImage: 'url("/assets/Untitled design (30).png")', top: 0, left: 0, right: 0, bottom: '-400px' }}
             />
         </div>
     );
