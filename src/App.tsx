@@ -12,7 +12,7 @@ import TrackPageViews from './components/TrackPageViews';
 
 function App() {
   return (
-    <Router>
+    <Router basename="/thomas">
       <TrackPageViews />
       <Layout>
         <Routes>
