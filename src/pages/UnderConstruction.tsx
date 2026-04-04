@@ -4,7 +4,7 @@ import { Settings, ArrowRight } from 'lucide-react';
 
 export default function UnderConstruction() {
     return (
-        <div className="min-h-screen bg-dark text-light flex flex-col items-center justify-center relative overflow-hidden font-sans">
+        <div className="min-h-screen bg-dark text-light flex flex-col items-center justify-center relative overflow-hidden font-sans cursor-default">
             {/* Background elements */}
             <div className="absolute inset-0 opacity-10 pointer-events-none">
                 <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary rounded-full blur-[100px]" />
