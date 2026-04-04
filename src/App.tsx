@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import Layout from './components/Layout';
 import TrackPageViews from './components/TrackPageViews';
 import Home from './pages/Home';
@@ -29,7 +29,7 @@ function App() {
             </Routes>
           </Layout>
         } />
-        <Route path="*" element={<UnderConstruction />} />
+        <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </Router>
   );
