@@ -44,7 +44,7 @@ function FaithConnectLightbox({ onClose }: { onClose: () => void }) {
 
             {/* Modal content — stop propagation so clicks inside don't close */}
             <div
-                className="w-full max-w-[1400px] flex flex-col gap-4 mt-12 md:mt-8"
+                className="w-full max-w-[1400px] flex flex-col gap-4 mt-8 md:mt-0"
                 onClick={e => e.stopPropagation()}
             >
                 {/* Title row */}
@@ -57,7 +57,7 @@ function FaithConnectLightbox({ onClose }: { onClose: () => void }) {
                 </div>
 
                 {/* Image */}
-                <div className="relative overflow-hidden rounded-2xl bg-dark/80 border border-light/5 shadow-2xl aspect-[4/3] md:aspect-video w-full flex items-center justify-center">
+                <div className="relative overflow-hidden rounded-2xl bg-dark/80 border border-light/5 shadow-2xl h-[65vh] md:h-[85vh] w-full flex items-center justify-center">
                     <AnimatePresence mode="wait">
                         <motion.img
                             key={current}
