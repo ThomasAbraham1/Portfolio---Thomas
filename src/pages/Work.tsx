@@ -58,7 +58,7 @@ function FaithConnectLightbox({ onClose }: { onClose: () => void }) {
                             animate={{ opacity: 1, x: 0 }}
                             exit={{ opacity: 0, x: -20 }}
                             transition={{ duration: 0.25, ease: "easeInOut" }}
-                            className="w-full h-full object-contain"
+                            className="w-full h-full object-scale-down"
                             draggable={false}
                         />
                     </AnimatePresence>
