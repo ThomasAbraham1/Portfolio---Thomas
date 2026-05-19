@@ -266,7 +266,7 @@ function ProjectCard({ project, index, onClick }: { project: any, index: number,
                 </div>
 
                 {/* Mobile action buttons (only visible on mobile/tablet) */}
-                {project.isSoftware && (
+                {project.isSoftware ? (
                     <div className="flex md:hidden gap-3 mt-3 w-full">
                         <button
                             onClick={(e) => {
@@ -289,6 +289,20 @@ function ProjectCard({ project, index, onClick }: { project: any, index: number,
                             </a>
                         )}
                     </div>
+                ) : (
+                    project.url && (
+                        <div className="flex md:hidden gap-3 mt-3 w-full">
+                            <a
+                                href={project.url}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                onClick={(e) => e.stopPropagation()}
+                                className="flex-1 py-3 px-4 bg-primary text-white text-xs font-bold uppercase rounded-xl text-center active:scale-95 transition-transform shadow-lg shadow-primary/20"
+                            >
+                                Open Site
+                            </a>
+                        </div>
+                    )
                 )}
             </div>
         </>
