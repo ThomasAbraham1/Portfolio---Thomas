@@ -11,12 +11,12 @@ export default function About() {
                     initial={{ opacity: 0, x: -50 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.8 }}
-                    className="relative group max-w-lg mx-auto md:mx-0"
+                    className="relative group max-w-[240px] mx-auto md:mx-0"
                 >
-                    <div className="aspect-[3/4] rounded-2xl overflow-hidden shadow-2xl relative z-10">
+                    <div className="aspect-square rounded-2xl overflow-hidden shadow-2xl relative z-10 bg-dark/5 dark:bg-light/5">
                         <div className="absolute inset-0 bg-primary/20 mix-blend-multiply opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-20"></div>
                         <img
-                            src="https://i.ibb.co/B5V29GMK/1763261864219.webp"
+                            src="https://i.ibb.co/hxqj340p/Whats-App-Image-2026-03-01-at-1-51-57-AM.jpg"
                             alt="Thomas Abraham"
                             loading="eager"
                             fetchPriority="high"
