@@ -244,7 +244,7 @@ function ProjectCard({ project, index, onClick }: { project: any, index: number,
                 </div>
             </motion.div>
 
-            <div className="flex flex-wrap justify-between items-end gap-3 px-2">
+            <div className="flex flex-col gap-3 px-2">
                 <div>
                     {project.isSoftware && (
                         <span className="inline-block text-[10px] font-bold uppercase tracking-widest text-primary border border-primary/40 px-2 py-0.5 rounded-full mb-2">
@@ -264,6 +264,32 @@ function ProjectCard({ project, index, onClick }: { project: any, index: number,
                         </div>
                     )}
                 </div>
+
+                {/* Mobile action buttons (only visible on mobile/tablet) */}
+                {project.isSoftware && (
+                    <div className="flex md:hidden gap-3 mt-3 w-full">
+                        <button
+                            onClick={(e) => {
+                                e.stopPropagation();
+                                if (onClick) onClick();
+                            }}
+                            className="flex-1 py-3 px-4 bg-dark/5 dark:bg-light/5 text-dark dark:text-light text-xs font-bold uppercase rounded-xl text-center border border-dark/10 dark:border-light/10 active:scale-95 transition-transform"
+                        >
+                            View Gallery
+                        </button>
+                        {project.url && (
+                            <a
+                                href={project.url}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                onClick={(e) => e.stopPropagation()}
+                                className="flex-1 py-3 px-4 bg-primary text-white text-xs font-bold uppercase rounded-xl text-center active:scale-95 transition-transform shadow-lg shadow-primary/20"
+                            >
+                                Open App
+                            </a>
+                        )}
+                    </div>
+                )}
             </div>
         </>
     );
