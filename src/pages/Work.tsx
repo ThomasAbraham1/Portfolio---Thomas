@@ -8,7 +8,7 @@ import { logEvent } from '../utils/analytics';
 
 const faithConnectScreenshots = [
     { src: "https://i.ibb.co/XxC47Tdf/Dashboard.png", label: "Dashboard" },
-    { src: "https://i.ibb.co/yFTs2b7x/Profile-info.png", label: "Member Profile" },
+    { src: "https://i.ibb.co/fz1qcdHT/Untitled-design-11.png", label: "Member Profile" },
     { src: "https://i.ibb.co/67vQZM1m/Groups.png", label: "Groups" },
     { src: "https://i.ibb.co/PZgN6SK3/Public-Events-Page.png", label: "Public Events" },
     { src: "https://i.ibb.co/60jgyzks/Custom-form-Fields.png", label: "Custom Form Fields" },
