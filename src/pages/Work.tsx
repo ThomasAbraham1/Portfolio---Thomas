@@ -265,9 +265,9 @@ function ProjectCard({ project, index, onClick }: { project: any, index: number,
                     )}
                 </div>
 
-                {/* Mobile action buttons (only visible on mobile/tablet) */}
+                {/* Mobile/Tablet action buttons (only visible on screens below desktop) */}
                 {project.isSoftware ? (
-                    <div className="flex md:hidden gap-3 mt-3 w-full">
+                    <div className="flex lg:hidden gap-3 mt-3 w-full">
                         <button
                             onClick={(e) => {
                                 e.stopPropagation();
@@ -291,7 +291,7 @@ function ProjectCard({ project, index, onClick }: { project: any, index: number,
                     </div>
                 ) : (
                     project.url && (
-                        <div className="flex md:hidden gap-3 mt-3 w-full">
+                        <div className="flex lg:hidden gap-3 mt-3 w-full">
                             <a
                                 href={project.url}
                                 target="_blank"
