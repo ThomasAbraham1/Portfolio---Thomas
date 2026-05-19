@@ -61,7 +61,7 @@ export default function CustomCursor() {
 
             {/* Cursor Dot */}
             <motion.div
-                className="fixed top-0 left-0 w-2.5 h-2.5 bg-dark rounded-full pointer-events-none z-[9999]"
+                className="fixed top-0 left-0 w-2.5 h-2.5 bg-dark dark:bg-light rounded-full pointer-events-none z-[9999]"
                 animate={{
                     x: mousePosition.x - 5,
                     y: mousePosition.y - 5,
@@ -72,13 +72,11 @@ export default function CustomCursor() {
 
             {/* Cursor Ring */}
             <motion.div
-                className="fixed top-0 left-0 w-10 h-10 border border-dark/50 rounded-full pointer-events-none z-[9999]"
+                className={`fixed top-0 left-0 w-10 h-10 border rounded-full pointer-events-none z-[9999] transition-colors duration-300 ${isHovering ? 'border-transparent bg-primary/10' : 'border-dark/30 dark:border-light/30 bg-transparent'}`}
                 animate={{
                     x: mousePosition.x - 20,
                     y: mousePosition.y - 20,
-                    scale: isHovering ? 1.5 : 1,
-                    backgroundColor: isHovering ? 'rgba(125, 161, 191, 0.1)' : 'transparent',
-                    borderColor: isHovering ? 'transparent' : 'rgba(36, 38, 43, 0.3)'
+                    scale: isHovering ? 1.5 : 1
                 }}
                 transition={{ type: "spring", stiffness: 150, damping: 15, mass: 0.1 }}
             />

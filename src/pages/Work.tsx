@@ -44,7 +44,7 @@ function FaithConnectLightbox({ onClose }: { onClose: () => void }) {
 
             {/* Modal content — stop propagation so clicks inside don't close */}
             <div
-                className="w-full max-w-[1400px] flex flex-col gap-4 mt-8 md:mt-0"
+                className="w-full max-w-[1400px] flex flex-col gap-4 mt-12 md:mt-8"
                 onClick={e => e.stopPropagation()}
             >
                 {/* Title row */}
@@ -122,6 +122,7 @@ const faithConnectProject = {
     category: "Software · Church Management System",
     image: "https://i.ibb.co/HTH2tQML/Dashboard.png",
     isSoftware: true,
+    url: "https://app.harpazotech.com",
 };
 
 const webProjects = [
@@ -210,13 +211,32 @@ function ProjectCard({ project, index, onClick }: { project: any, index: number,
                     style={{ translateZ: "50px" }}
                 />
                 {/* Hover CTA */}
-                <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-20">
-                    <div className="w-20 h-20 bg-light/90 backdrop-blur-sm rounded-full flex items-center justify-center text-dark transform scale-0 group-hover:scale-100 transition-transform duration-500 delay-100 shadow-xl">
-                        {project.isSoftware
-                            ? <span className="text-xs font-bold uppercase text-center leading-tight px-2">View<br />Gallery</span>
-                            : <ArrowUpRight size={36} strokeWidth={1.5} />
-                        }
-                    </div>
+                <div className="absolute inset-0 flex items-center justify-center gap-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-20">
+                    {project.isSoftware ? (
+                        <>
+                            <div className="w-20 h-20 bg-light/90 backdrop-blur-sm rounded-full flex items-center justify-center text-dark transform scale-0 group-hover:scale-100 transition-transform duration-500 delay-100 shadow-xl pointer-events-auto hover:bg-primary hover:text-white transition-colors cursor-pointer">
+                                <span className="text-xs font-bold uppercase text-center leading-tight px-2">View<br />Gallery</span>
+                            </div>
+                            {project.url && (
+                                <a
+                                    href={project.url}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    onClick={(e) => {
+                                        e.stopPropagation();
+                                        logEvent('Work', 'External Link Clicked', project.title);
+                                    }}
+                                    className="w-20 h-20 bg-light/90 backdrop-blur-sm rounded-full flex items-center justify-center text-dark transform scale-0 group-hover:scale-100 transition-transform duration-500 delay-150 shadow-xl pointer-events-auto hover:bg-primary hover:text-white transition-colors"
+                                >
+                                    <ArrowUpRight size={36} strokeWidth={1.5} />
+                                </a>
+                            )}
+                        </>
+                    ) : (
+                        <div className="w-20 h-20 bg-light/90 backdrop-blur-sm rounded-full flex items-center justify-center text-dark transform scale-0 group-hover:scale-100 transition-transform duration-500 delay-100 shadow-xl">
+                            <ArrowUpRight size={36} strokeWidth={1.5} />
+                        </div>
+                    )}
                 </div>
             </motion.div>
 
