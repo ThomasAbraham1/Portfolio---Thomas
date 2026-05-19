@@ -43,7 +43,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             <CustomCursor />
             <div className="noise-overlay" />
             <Navbar />
-            <main className="relative z-10 min-h-screen pt-20 md:pt-24">
+            <main className="relative min-h-screen pt-20 md:pt-24">
                 {children}
             </main>
             <Footer />
