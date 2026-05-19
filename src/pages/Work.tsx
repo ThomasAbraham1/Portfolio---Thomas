@@ -7,13 +7,13 @@ import { logEvent } from '../utils/analytics';
 // ─── Faith Connect Data ───────────────────────────────────────────────────────
 
 const faithConnectScreenshots = [
-    { src: "https://i.ibb.co/HTH2tQML/Dashboard.png", label: "Dashboard" },
+    { src: "https://i.ibb.co/XxC47Tdf/Dashboard.png", label: "Dashboard" },
     { src: "https://i.ibb.co/yFTs2b7x/Profile-info.png", label: "Member Profile" },
-    { src: "https://i.ibb.co/TxKyTfbk/Groups.png", label: "Groups" },
-    { src: "https://i.ibb.co/4Zp7VQz9/Public-Events-Page.png", label: "Public Events" },
-    { src: "https://i.ibb.co/7ts2SPqy/Custom-form-Fields.png", label: "Custom Form Fields" },
-    { src: "https://i.ibb.co/1JLgGhCs/Financials.png", label: "Financials" },
-    { src: "https://i.ibb.co/5hmt07KS/Reports.png", label: "Reports" },
+    { src: "https://i.ibb.co/67vQZM1m/Groups.png", label: "Groups" },
+    { src: "https://i.ibb.co/PZgN6SK3/Public-Events-Page.png", label: "Public Events" },
+    { src: "https://i.ibb.co/60jgyzks/Custom-form-Fields.png", label: "Custom Form Fields" },
+    { src: "https://i.ibb.co/yBX9FGzh/Financials.png", label: "Financials" },
+    { src: "https://i.ibb.co/ch0MBmYZ/Reports.png", label: "Reports" },
 ];
 
 // ─── Lightbox Modal ───────────────────────────────────────────────────────────
@@ -124,7 +124,7 @@ function FaithConnectLightbox({ onClose }: { onClose: () => void }) {
 const faithConnectProject = {
     title: "Faith Connect",
     category: "Software · Church Management System",
-    image: "https://i.ibb.co/HTH2tQML/Dashboard.png",
+    image: "https://i.ibb.co/XxC47Tdf/Dashboard.png",
     isSoftware: true,
     url: "https://app.harpazotech.com",
 };
