@@ -5,38 +5,39 @@ import { Code2, Zap, Globe } from 'lucide-react';
 export default function About() {
     return (
         <div className="container mx-auto px-6 py-20">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+            <div className="max-w-5xl mx-auto flex flex-col md:flex-row gap-12 md:gap-20 items-start">
                 {/* Image */}
                 <motion.div
-                    initial={{ opacity: 0, x: -50 }}
-                    animate={{ opacity: 1, x: 0 }}
+                    initial={{ opacity: 0, y: 30 }}
+                    animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8 }}
-                    className="relative group max-w-[240px] mx-auto md:mx-0"
+                    className="relative shrink-0 mx-auto md:mx-0 mt-2 md:mt-6"
                 >
-                    <div className="aspect-square rounded-2xl overflow-hidden shadow-2xl relative z-10 bg-dark/5 dark:bg-light/5">
-                        <div className="absolute inset-0 bg-primary/20 mix-blend-multiply opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-20"></div>
+                    <div className="w-56 h-56 md:w-64 md:h-64 rounded-full overflow-hidden shadow-2xl relative z-10 border-4 border-light/50 dark:border-dark/50 ring-1 ring-dark/5 dark:ring-light/5">
+                        <div className="absolute inset-0 bg-primary/20 mix-blend-multiply opacity-0 hover:opacity-100 transition-opacity duration-500 z-20"></div>
                         <img
                             src="https://i.ibb.co/hxqj340p/Whats-App-Image-2026-03-01-at-1-51-57-AM.jpg"
                             alt="Thomas Abraham"
                             loading="eager"
                             fetchPriority="high"
-                            className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
+                            className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
                         />
                     </div>
                     {/* Decorative element */}
-                    <div className="absolute -bottom-10 -right-10 w-40 h-40 bg-primary/30 rounded-full blur-3xl -z-10 animate-pulse"></div>
-                    <div className="absolute -top-10 -left-10 w-40 h-40 bg-gray/20 rounded-full blur-3xl -z-10"></div>
+                    <div className="absolute -bottom-8 -right-8 w-40 h-40 bg-primary/30 rounded-full blur-3xl -z-10 animate-pulse"></div>
+                    <div className="absolute -top-8 -left-8 w-40 h-40 bg-gray/20 rounded-full blur-3xl -z-10"></div>
                 </motion.div>
 
                 {/* Content */}
                 <motion.div
-                    initial={{ opacity: 0, x: 50 }}
-                    animate={{ opacity: 1, x: 0 }}
+                    initial={{ opacity: 0, y: 30 }}
+                    animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, delay: 0.2 }}
+                    className="flex-1 text-center md:text-left"
                 >
-                    <h2 className="text-5xl md:text-7xl font-bold mb-10 tracking-tighter">About Me.</h2>
+                    <h2 className="text-5xl md:text-7xl font-bold mb-8 tracking-tighter">About Me.</h2>
 
-                    <div className="space-y-8 text-lg md:text-xl text-dark/80 dark:text-light/80 leading-relaxed font-light">
+                    <div className="space-y-6 text-lg md:text-xl text-dark/80 dark:text-light/80 leading-relaxed font-light">
                         <p>
                             Hi, I’m Thomas Abraham — a full-stack developer who turns beautiful designs into fast, functional, and conversion-focused websites.
                         </p>
