@@ -7,13 +7,13 @@ import { logEvent } from '../utils/analytics';
 // ─── Faith Connect Data ───────────────────────────────────────────────────────
 
 const faithConnectScreenshots = [
+    { src: "https://i.ibb.co/HTH2tQML/Dashboard.png", label: "Dashboard" },
     { src: "https://i.ibb.co/yFTs2b7x/Profile-info.png", label: "Member Profile" },
+    { src: "https://i.ibb.co/TxKyTfbk/Groups.png", label: "Groups" },
     { src: "https://i.ibb.co/4Zp7VQz9/Public-Events-Page.png", label: "Public Events" },
     { src: "https://i.ibb.co/7ts2SPqy/Custom-form-Fields.png", label: "Custom Form Fields" },
     { src: "https://i.ibb.co/1JLgGhCs/Financials.png", label: "Financials" },
-    { src: "https://i.ibb.co/TxKyTfbk/Groups.png", label: "Groups" },
     { src: "https://i.ibb.co/5hmt07KS/Reports.png", label: "Reports" },
-    { src: "https://i.ibb.co/HTH2tQML/Dashboard.png", label: "Dashboard" },
 ];
 
 // ─── Lightbox Modal ───────────────────────────────────────────────────────────
@@ -30,7 +30,7 @@ function FaithConnectLightbox({ onClose }: { onClose: () => void }) {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3 }}
-            className="fixed inset-0 z-[100] bg-dark/90 backdrop-blur-lg flex flex-col items-center justify-center p-4 md:p-8"
+            className="fixed inset-0 z-[100] bg-dark/95 backdrop-blur-xl flex flex-col items-center justify-center p-4 md:p-8 pt-20 md:pt-8"
             onClick={onClose}
         >
             {/* Close button */}
@@ -44,30 +44,30 @@ function FaithConnectLightbox({ onClose }: { onClose: () => void }) {
 
             {/* Modal content — stop propagation so clicks inside don't close */}
             <div
-                className="w-full max-w-5xl flex flex-col gap-5"
+                className="w-full max-w-5xl flex flex-col gap-4 mt-8 md:mt-0"
                 onClick={e => e.stopPropagation()}
             >
                 {/* Title row */}
-                <div className="flex items-center justify-between text-light">
+                <div className="flex items-center justify-between text-light px-2">
                     <div>
                         <h3 className="text-2xl font-bold">Faith Connect</h3>
-                        <p className="text-light/50 text-sm">{faithConnectScreenshots[current].label}</p>
+                        <p className="text-light/60 text-sm">{faithConnectScreenshots[current].label}</p>
                     </div>
-                    <span className="text-light/40 font-mono text-sm">{current + 1} / {faithConnectScreenshots.length}</span>
+                    <span className="text-light/40 font-mono text-sm bg-light/10 px-3 py-1 rounded-full">{current + 1} / {faithConnectScreenshots.length}</span>
                 </div>
 
                 {/* Image */}
-                <div className="relative overflow-hidden rounded-2xl bg-dark/50 border border-light/10 shadow-2xl">
+                <div className="relative overflow-hidden rounded-2xl bg-dark/80 border border-light/5 shadow-2xl aspect-[4/3] md:aspect-video w-full flex items-center justify-center">
                     <AnimatePresence mode="wait">
                         <motion.img
                             key={current}
                             src={faithConnectScreenshots[current].src}
                             alt={faithConnectScreenshots[current].label}
-                            initial={{ opacity: 0, x: 40 }}
+                            initial={{ opacity: 0, x: 20 }}
                             animate={{ opacity: 1, x: 0 }}
-                            exit={{ opacity: 0, x: -40 }}
-                            transition={{ duration: 0.35, ease: "easeInOut" }}
-                            className="w-full object-cover rounded-2xl"
+                            exit={{ opacity: 0, x: -20 }}
+                            transition={{ duration: 0.25, ease: "easeInOut" }}
+                            className="w-full h-full object-contain p-2"
                             draggable={false}
                         />
                     </AnimatePresence>
@@ -75,15 +75,15 @@ function FaithConnectLightbox({ onClose }: { onClose: () => void }) {
                     {/* Prev / Next overlay arrows */}
                     <button
                         onClick={prev}
-                        className="absolute left-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-dark/60 hover:bg-primary flex items-center justify-center text-light transition-all duration-300"
+                        className="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-dark/80 border border-light/10 hover:bg-primary hover:border-primary flex items-center justify-center text-light transition-all duration-300 shadow-lg"
                     >
-                        <ChevronLeft size={20} />
+                        <ChevronLeft size={24} />
                     </button>
                     <button
                         onClick={next}
-                        className="absolute right-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-dark/60 hover:bg-primary flex items-center justify-center text-light transition-all duration-300"
+                        className="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-dark/80 border border-light/10 hover:bg-primary hover:border-primary flex items-center justify-center text-light transition-all duration-300 shadow-lg"
                     >
-                        <ChevronRight size={20} />
+                        <ChevronRight size={24} />
                     </button>
                 </div>
 
