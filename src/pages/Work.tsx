@@ -44,7 +44,7 @@ function FaithConnectLightbox({ onClose }: { onClose: () => void }) {
 
             {/* Modal content — stop propagation so clicks inside don't close */}
             <div
-                className="w-full max-w-5xl flex flex-col gap-4 mt-8 md:mt-0"
+                className="w-full max-w-[1400px] flex flex-col gap-4 mt-8 md:mt-0"
                 onClick={e => e.stopPropagation()}
             >
                 {/* Title row */}
