@@ -13,18 +13,17 @@ export default function About() {
                     transition={{ duration: 0.8 }}
                     className="relative shrink-0 mx-auto md:mx-0 mt-2 md:mt-6"
                 >
-                    <div className="w-56 h-56 md:w-64 md:h-64 rounded-full overflow-hidden shadow-2xl relative z-10 border-4 border-light/50 dark:border-dark/50 ring-1 ring-dark/5 dark:ring-light/5">
-                        <div className="absolute inset-0 bg-primary/20 mix-blend-multiply opacity-0 hover:opacity-100 transition-opacity duration-500 z-20"></div>
+                    <div className="w-56 h-56 md:w-64 md:h-64 rounded-full overflow-hidden shadow-2xl relative z-10 border-4 border-light dark:border-dark ring-1 ring-dark/5 dark:ring-light/5">
                         <img
                             src="https://i.ibb.co/hxqj340p/Whats-App-Image-2026-03-01-at-1-51-57-AM.jpg"
                             alt="Thomas Abraham"
                             loading="eager"
                             fetchPriority="high"
-                            className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
+                            className="w-full h-full object-cover"
                         />
                     </div>
                     {/* Decorative element */}
-                    <div className="absolute -bottom-8 -right-8 w-40 h-40 bg-primary/30 rounded-full blur-3xl -z-10 animate-pulse"></div>
+                    <div className="absolute -bottom-8 -right-8 w-40 h-40 bg-primary/10 rounded-full blur-3xl -z-10 animate-pulse"></div>
                     <div className="absolute -top-8 -left-8 w-40 h-40 bg-gray/20 rounded-full blur-3xl -z-10"></div>
                 </motion.div>
 
