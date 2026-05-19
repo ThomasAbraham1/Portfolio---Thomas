@@ -44,20 +44,11 @@ function FaithConnectLightbox({ onClose }: { onClose: () => void }) {
 
             {/* Modal content — stop propagation so clicks inside don't close */}
             <div
-                className="w-full max-w-[1400px] flex flex-col gap-4 mt-8 md:mt-0"
+                className="w-full max-w-[1400px] flex flex-col mt-8 md:mt-0"
                 onClick={e => e.stopPropagation()}
             >
-                {/* Title row */}
-                <div className="flex items-center justify-between text-light px-2">
-                    <div>
-                        <h3 className="text-2xl font-bold">Faith Connect</h3>
-                        <p className="text-light/60 text-sm">{faithConnectScreenshots[current].label}</p>
-                    </div>
-                    <span className="text-light/40 font-mono text-sm bg-light/10 px-3 py-1 rounded-full">{current + 1} / {faithConnectScreenshots.length}</span>
-                </div>
-
                 {/* Image */}
-                <div className="relative overflow-hidden rounded-2xl bg-dark/80 border border-light/5 shadow-2xl h-[65vh] md:h-[85vh] w-full flex items-center justify-center">
+                <div className="relative overflow-hidden rounded-2xl bg-dark/80 border border-light/5 shadow-2xl aspect-video w-full flex items-center justify-center group">
                     <AnimatePresence mode="wait">
                         <motion.img
                             key={current}
@@ -67,23 +58,36 @@ function FaithConnectLightbox({ onClose }: { onClose: () => void }) {
                             animate={{ opacity: 1, x: 0 }}
                             exit={{ opacity: 0, x: -20 }}
                             transition={{ duration: 0.25, ease: "easeInOut" }}
-                            className="w-full h-full object-contain p-2"
+                            className="w-full h-full object-contain"
                             draggable={false}
                         />
                     </AnimatePresence>
 
+                    {/* Title overlay (ghosted) */}
+                    <div className="absolute top-2 left-2 md:top-4 md:left-4 bg-dark/50 backdrop-blur-md px-3 py-1.5 md:px-5 md:py-3 rounded-lg md:rounded-xl flex items-center gap-2 md:gap-4 z-20 shadow-xl border border-light/10 max-w-[80%]">
+                        <div className="hidden md:block">
+                            <h3 className="text-xl font-bold text-white tracking-tight">Faith Connect</h3>
+                            <p className="text-white/80 text-sm mt-0.5">{faithConnectScreenshots[current].label}</p>
+                        </div>
+                        <div className="md:hidden flex-1 min-w-0">
+                            <p className="text-white font-bold text-xs truncate">{faithConnectScreenshots[current].label}</p>
+                        </div>
+                        <div className="h-4 md:h-10 w-[1px] bg-white/20 shrink-0" />
+                        <span className="text-white/60 font-mono text-xs md:text-sm shrink-0">{current + 1} / {faithConnectScreenshots.length}</span>
+                    </div>
+
                     {/* Prev / Next overlay arrows */}
                     <button
                         onClick={prev}
-                        className="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-dark/80 border border-light/10 hover:bg-primary hover:border-primary flex items-center justify-center text-light transition-all duration-300 shadow-lg"
+                        className="absolute left-2 md:left-4 top-1/2 -translate-y-1/2 w-8 h-8 md:w-12 md:h-12 rounded-full bg-dark/80 border border-light/10 hover:bg-primary hover:border-primary flex items-center justify-center text-light transition-all duration-300 shadow-lg"
                     >
-                        <ChevronLeft size={24} />
+                        <ChevronLeft className="w-5 h-5 md:w-6 md:h-6" />
                     </button>
                     <button
                         onClick={next}
-                        className="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-dark/80 border border-light/10 hover:bg-primary hover:border-primary flex items-center justify-center text-light transition-all duration-300 shadow-lg"
+                        className="absolute right-2 md:right-4 top-1/2 -translate-y-1/2 w-8 h-8 md:w-12 md:h-12 rounded-full bg-dark/80 border border-light/10 hover:bg-primary hover:border-primary flex items-center justify-center text-light transition-all duration-300 shadow-lg"
                     >
-                        <ChevronRight size={24} />
+                        <ChevronRight className="w-5 h-5 md:w-6 md:h-6" />
                     </button>
                 </div>
 
