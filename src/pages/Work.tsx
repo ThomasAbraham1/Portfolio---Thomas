@@ -13,7 +13,7 @@ const faithConnectScreenshots = [
     { src: "https://i.ibb.co/PZgN6SK3/Public-Events-Page.png", label: "Public Events" },
     { src: "https://i.ibb.co/60jgyzks/Custom-form-Fields.png", label: "Custom Form Fields" },
     { src: "https://i.ibb.co/yBX9FGzh/Financials.png", label: "Financials" },
-    { src: "https://i.ibb.co/KxfQhr08/Reports.png", label: "Reports" },
+    { src: "https://i.ibb.co/DPsRhYyK/Untitled-design-12.png", label: "Reports" },
 ];
 
 // ─── Lightbox Modal ───────────────────────────────────────────────────────────
