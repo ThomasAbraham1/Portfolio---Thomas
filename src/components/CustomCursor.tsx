@@ -53,7 +53,7 @@ export default function CustomCursor() {
         <>
             {/* Spotlight */}
             <div
-                className="fixed top-0 left-0 w-full h-full pointer-events-none z-0 transition-opacity duration-300"
+                className="fixed top-0 left-0 w-full h-full pointer-events-none z-0 transition-opacity duration-300 hidden lg:block"
                 style={{
                     background: `radial-gradient(600px at ${mousePosition.x}px ${mousePosition.y}px, rgba(125, 161, 191, 0.15), transparent 80%)`
                 }}
@@ -61,7 +61,7 @@ export default function CustomCursor() {
 
             {/* Cursor Dot */}
             <motion.div
-                className="fixed top-0 left-0 w-2.5 h-2.5 bg-dark dark:bg-light rounded-full pointer-events-none z-[9999]"
+                className="fixed top-0 left-0 w-2.5 h-2.5 bg-dark dark:bg-light rounded-full pointer-events-none z-[9999] hidden lg:block"
                 animate={{
                     x: mousePosition.x - 5,
                     y: mousePosition.y - 5,
@@ -72,7 +72,7 @@ export default function CustomCursor() {
 
             {/* Cursor Ring */}
             <motion.div
-                className={`fixed top-0 left-0 w-10 h-10 border rounded-full pointer-events-none z-[9999] transition-colors duration-300 ${isHovering ? 'border-transparent bg-primary/10' : 'border-dark/30 dark:border-light/30 bg-transparent'}`}
+                className={`fixed top-0 left-0 w-10 h-10 border rounded-full pointer-events-none z-[9999] transition-colors duration-300 hidden lg:block ${isHovering ? 'border-transparent bg-primary/10' : 'border-dark/30 dark:border-light/30 bg-transparent'}`}
                 animate={{
                     x: mousePosition.x - 20,
                     y: mousePosition.y - 20,
